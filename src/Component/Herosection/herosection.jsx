@@ -9,6 +9,7 @@ function Hero() {
     { src: RajaAmpat, alt: "Panorama Kepulauan Raja Ampat" },
     { src: Bali, alt: "Pemandangan Sawah Terasering Bali" },
     { src: Borobudur, alt: "Kemegahan Candi Borobudur" },
+    { src: Komodo, alt: "Pemandangan indah Pulau Komodo di Nusa Tenggara Timur, Indonesia"}
   ];
 
   const cardImages = [
@@ -28,7 +29,8 @@ function Hero() {
   }, [backgroundSlides.length]);
 
   return (
-    <section className="relative w-full h-[600px] overflow-hidden">
+    // Tinggi disesuaikan menjadi h-[700px]
+    <section className="relative w-full h-[800px] overflow-hidden">
       <div className="absolute inset-0">
         {backgroundSlides.map((slide, index) => (
           <div 
@@ -45,23 +47,25 @@ function Hero() {
         <div className="absolute inset-0 z-0"></div> 
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-20 text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white pb-[280px]"> 
         
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-8" style={{ color: '#ffffff' }}>
+        <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-none" style={{ color: '#ffffff' }}>
           DISCOVER YOUR
           <br />
           ADVENTURE
         </h1>
 
-        <button className="bg-white text-gray-900 px-6 py-3 rounded-full flex items-center shadow-lg hover:bg-gray-100 transition-colors duration-200">
+        <button className="bg-white text-gray-900 px-6 py-3 rounded-full flex items-center shadow-lg hover:bg-gray-100 transition-colors duration-200 text-base font-semibold">
           Create Your Ideal Trip 
           <span className="ml-2 text-xl">
             →
           </span>
         </button>
 
-        <div className="absolute bottom-[-50px] w-full px-4 md:px-10 lg:px-20 z-20">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {/* Grid Kartu Gambar di Bagian Bawah */}
+        {/* bottom-0 agar menempel di batas bawah Hero */}
+        <div className="absolute bottom-0 w-full px-4 md:px-10 lg:px-20 z-20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-7xl mx-auto">
             {cardImages.map((image, index) => (
               <div 
                 key={index} 
@@ -70,7 +74,7 @@ function Hero() {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover" 
+                  className="w-full h-56 md:h-64 object-cover" 
                 />
                 
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
