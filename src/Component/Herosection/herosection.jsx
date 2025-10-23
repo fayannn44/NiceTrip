@@ -64,26 +64,30 @@ function Hero() {
         </button>
 
         {/* Grid Kartu Gambar di Bagian Bawah */}
-        <div className="absolute bottom-0 w-full px-4 md:px-10 lg:px-20 z-20">
+        <div className="absolute bottom-15 w-full px-4 md:px-10 lg:px-20 z-20">
           
-          {/* PERUBAHAN UTAMA: 'overflow-x-scroll' diganti dengan 'overflow-x-auto' */}
-          <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto pb-4 scroll-smooth scrollbar-hide">
+          {/* Hapus 'pb-4' untuk menghindari overflow vertikal tambahan */}
+          <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto scroll-smooth scrollbar-hide">
             
             {cardImages.map((image, index) => (
+              // Container kartu sekarang hanya memiliki styling dasar
               <div 
                 key={index} 
-                className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.05] transition-transform duration-300 group cursor-pointer border-4 border-transparent hover:border-white"
+                className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl transition-all duration-300 group cursor-pointer border-4 border-transparent hover:border-white"
               >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-72 md:h-80 object-cover transition-opacity duration-300 group-hover:opacity-80" 
-                />
-                
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <p className="text-white text-center font-bold text-lg md:text-xl">
-                        {image.description}
-                    </p>
+                {/* Tambahkan div internal untuk menerapkan SCALE effect, menjaga border dan shadow agar tetap rapi */}
+                <div className="transform transition-transform duration-300 group-hover:scale-[1.05]">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-72 md:h-80 object-cover transition-opacity duration-300 group-hover:opacity-80" 
+                    />
+                    
+                    <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p className="text-white text-center font-bold text-lg md:text-xl">
+                            {image.description}
+                        </p>
+                    </div>
                 </div>
               </div>
             ))}
