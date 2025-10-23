@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Bali from "../../assets/images/Bali.jpg";
 import Borobudur from "../../assets/images/Borobudur.jpg";
-import RajaAmpat from "../../assets/images/RajaAmpat.jpg"; 
+import RajaAmpat from "../../assets/images/RajaAmpat.jpg";
 import Komodo from "../../assets/images/Komodo.jpg";
 
 function Hero() {
@@ -10,13 +10,6 @@ function Hero() {
     { src: Bali, alt: "Pemandangan Sawah Terasering Bali" },
     { src: Borobudur, alt: "Kemegahan Candi Borobudur" },
     { src: Komodo, alt: "Pulau Komodo NTT" }
-  ];
-
-  const cardImages = [
-    { src: Bali, alt: "Pulau Bali", description: "Nikmati pantai dan budaya Bali." },
-    { src: Borobudur, alt: "Candi Borobudur", description: "Keajaiban arsitektur dunia." },
-    { src: RajaAmpat, alt: "Raja Ampat", description: "Selami surga bawah laut." },
-    { src: Komodo, alt: "Pulau Komodo", description: "Rumahnya Komodo asli." },
   ];
 
   const [currentBg, setCurrentBg] = useState(0);
@@ -44,7 +37,6 @@ function Hero() {
         ))}
       </div>
 
-      {/* Title & Button */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white pb-[380px] px-4">
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter mb-10 leading-none">
           DISCOVER YOUR <br /> ADVENTURE
@@ -54,28 +46,53 @@ function Hero() {
           Create Your Ideal Trip →
         </button>
 
-        {/* Image Cards */}
         <div className="absolute bottom-15 w-full px-4 md:px-10 lg:px-20 z-20">
-          <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto scroll-smooth scrollbar-hide">
-            {cardImages.map((image, index) => (
-              <div
-                key={index}
-                className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-72 md:h-80 object-cover group-hover:opacity-80 transition duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
-                  <p className="text-white text-center font-bold text-lg md:text-xl">
-                    {image.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto scroll-smooth scrollbar-hide">
+
+            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
+            <img src={Bali} alt="Pulau Bali" className="w-full h-72 md:h-80 object-cover transition duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
+            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
+                <p className="text-white text-center font-bold text-lg md:text-xl">
+                Pulau tropis dengan budaya yang kaya, panorama alam memukau, dan pengalaman wisata kelas dunia.
+                </p>
+            </div>
+            </div>
+            
+
+            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
+            <img src={Borobudur} alt="Candi Borobudur" className="w-full h-72 md:h-80 object-cover transition duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
+            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
+                <p className="text-white text-center font-bold text-lg md:text-xl">
+                Salah satu keajaiban dunia yang penuh nilai sejarah dan spiritual tingkat tinggi.
+                </p>
+            </div>
+            </div>
+
+            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
+            <img src={RajaAmpat} alt="Raja Ampat" className="w-full h-72 md:h-80 object-cover transition duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
+            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
+                <p className="text-white text-center font-bold text-lg md:text-xl">
+                Surga dunia bawah laut dengan keindahan terumbu karang kelas dunia.
+                </p>
+            </div>
+            </div>
+
+            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
+            <img src={Komodo} alt="Pulau Komodo" className="w-full h-72 md:h-80 object-cover transition duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
+            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
+                <p className="text-white text-center font-bold text-lg md:text-xl">
+                Rumah asli Komodo, hewan purba yang hanya ada di Indonesia.
+                </p>
+            </div>
+            </div>
+
         </div>
+        </div>
+
       </div>
     </section>
   );
