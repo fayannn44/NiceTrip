@@ -29,8 +29,8 @@ function Hero() {
   }, [backgroundSlides.length]);
 
   return (
-    // Tinggi disesuaikan menjadi h-[700px]
-    <section className="relative w-full h-[800px] overflow-hidden">
+    // Tinggi Hero disesuaikan menjadi h-[900px] untuk mengakomodasi kartu yang lebih besar
+    <section className="relative w-full h-[900px] overflow-hidden">
       <div className="absolute inset-0">
         {backgroundSlides.map((slide, index) => (
           <div 
@@ -47,15 +47,16 @@ function Hero() {
         <div className="absolute inset-0 z-0"></div> 
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white pb-[280px]"> 
+      {/* Konten Teks & Tombol */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white pb-[380px] px-4"> 
         
-        <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-none" style={{ color: '#ffffff' }}>
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter mb-10 leading-none" style={{ color: '#ffffff' }}>
           DISCOVER YOUR
-          <br />
+          <br className="hidden sm:block" /> 
           ADVENTURE
         </h1>
 
-        <button className="bg-white text-gray-900 px-6 py-3 rounded-full flex items-center shadow-lg hover:bg-gray-100 transition-colors duration-200 text-base font-semibold">
+        <button className="bg-white text-gray-900 px-8 py-4 rounded-full flex items-center shadow-2xl hover:bg-gray-100 transition-colors duration-200 text-lg font-bold transform hover:scale-[1.05] active:scale-[0.98]">
           Create Your Ideal Trip 
           <span className="ml-2 text-xl">
             →
@@ -63,22 +64,24 @@ function Hero() {
         </button>
 
         {/* Grid Kartu Gambar di Bagian Bawah */}
-        {/* bottom-0 agar menempel di batas bawah Hero */}
         <div className="absolute bottom-0 w-full px-4 md:px-10 lg:px-20 z-20">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          
+          {/* PERUBAHAN UTAMA: 'overflow-x-scroll' diganti dengan 'overflow-x-auto' */}
+          <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto pb-4 scroll-smooth scrollbar-hide">
+            
             {cardImages.map((image, index) => (
               <div 
                 key={index} 
-                className="relative rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition-transform duration-300 group cursor-pointer"
+                className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.05] transition-transform duration-300 group cursor-pointer border-4 border-transparent hover:border-white"
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-56 md:h-64 object-cover" 
+                  className="w-full h-72 md:h-80 object-cover transition-opacity duration-300 group-hover:opacity-80" 
                 />
                 
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-center font-semibold text-lg">
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="text-white text-center font-bold text-lg md:text-xl">
                         {image.description}
                     </p>
                 </div>
