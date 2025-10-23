@@ -26,8 +26,8 @@ function About() {
           {/* Gambar Penuh Lebar dengan Teks di Dalam */}
           <div className="relative w-full h-[550px] rounded-2xl shadow-2xl overflow-hidden group">
             
-            {/* Placeholder Gambar (Background) - Diganti dengan gradient agar lebih dinamis */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+            {/* Placeholder Gambar (Background) - DIGANTI DENGAN WARNA SOLID UNTUK MENGHINDARI EROR GRADIENT */}
+            <div className="absolute inset-0 bg-gray-800 flex items-center justify-center"> 
                 <span className="text-white text-3xl font-bold opacity-75">
                     [Placeholder Gambar Kontras Tahoe/Reno]
                 </span>
