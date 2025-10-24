@@ -27,7 +27,7 @@ function Hero() {
         {backgroundSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000`}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
             style={{
               backgroundImage: `url(${slide.src})`,
               opacity: index === currentBg ? 1 : 0,
@@ -47,51 +47,53 @@ function Hero() {
         </button>
 
         <div className="absolute bottom-15 w-full px-4 md:px-10 lg:px-20 z-20">
-        <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto scroll-smooth scrollbar-hide">
+  <div className="flex flex-nowrap overflow-x-auto md:grid md:grid-cols-4 gap-4 max-w-7xl mx-auto scroll-smooth scrollbar-hide">
 
-            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
-            <img src={Bali} alt="Pulau Bali" className="w-full h-72 md:h-80 object-cover transition duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
-            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
-                <p className="text-white text-center font-bold text-lg md:text-xl">
-                Pulau tropis dengan budaya yang kaya, panorama alam memukau, dan pengalaman wisata kelas dunia.
-                </p>
-            </div>
-            </div>
-            
+    <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer transition">
+      <img src={Bali} alt="Pulau Bali" className="w-full h-72 md:h-80 object-cover transition duration-500 group-hover:scale-105 group-hover:blur-[2px]" />
+      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center p-4 transition duration-500">
+        <p className="text-white text-center font-light text-lg font-serif tracking-wide">
+          Pulau tropis dengan budaya yang kaya dan pantai yang mendunia.
+        </p>
+      </div>
+      <p className="text-white text-center mt-3 text-xl font-serif tracking-wide">BALI</p>
+    </div>
 
-            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
-            <img src={Borobudur} alt="Candi Borobudur" className="w-full h-72 md:h-80 object-cover transition duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
-            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
-                <p className="text-white text-center font-bold text-lg md:text-xl">
-                Salah satu keajaiban dunia yang penuh nilai sejarah dan spiritual tingkat tinggi.
-                </p>
-            </div>
-            </div>
+    <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer transition">
+      <img src={Borobudur} alt="Candi Borobudur" className="w-full h-72 md:h-80 object-cover transition duration-500 group-hover:scale-105 group-hover:blur-[2px]" />
+      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center p-4 transition duration-500">
+        <p className="text-white text-center font-light text-lg font-serif tracking-wide">
+          Warisan dunia UNESCO dan mahakarya arsitektur Buddha.
+        </p>
+      </div>
+      <p className="text-white text-center mt-3 text-xl font-serif tracking-wide">CANDI BOROBUDUR</p>
+    </div>
 
-            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
-            <img src={RajaAmpat} alt="Raja Ampat" className="w-full h-72 md:h-80 object-cover transition duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
-            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
-                <p className="text-white text-center font-bold text-lg md:text-xl">
-                Surga dunia bawah laut dengan keindahan terumbu karang kelas dunia.
-                </p>
-            </div>
-            </div>
+    <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer transition">
+      <img src={RajaAmpat} alt="Raja Ampat" className="w-full h-72 md:h-80 object-cover transition duration-500 group-hover:scale-105 group-hover:blur-[2px]" />
+      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center p-4 transition duration-500">
+        <p className="text-white text-center font-light text-lg font-serif tracking-wide">
+          Surga bawah laut terbaik di dunia dengan ribuan biota laut.
+        </p>
+      </div>
+      <p className="text-white text-center mt-3 text-xl font-serif tracking-wide">RAJA AMPAT</p>
+    </div>
 
-            <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-white transition">
-            <img src={Komodo} alt="Pulau Komodo" className="w-full h-72 md:h-80 object-cover transition duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center p-4 
-            opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500">
-                <p className="text-white text-center font-bold text-lg md:text-xl">
-                Rumah asli Komodo, hewan purba yang hanya ada di Indonesia.
-                </p>
-            </div>
-            </div>
+    <div className="relative flex-shrink-0 w-72 sm:w-80 md:w-full rounded-xl overflow-hidden shadow-2xl group cursor-pointer transition">
+      <img src={Komodo} alt="Pulau Komodo" className="w-full h-72 md:h-80 object-cover transition duration-500 group-hover:scale-105 group-hover:blur-[2px]" />
+      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center p-4 transition duration-500">
+        <p className="text-white text-center font-light text-lg font-serif tracking-wide">
+          Habitat hewan purba asli Indonesia, Komodo.
+        </p>
+      </div>
+      <p className="text-white text-center mt-3 text-xl font-serif tracking-wide">PULAU KOMODO</p>
+    </div>
 
-        </div>
-        </div>
+    
+
+  </div>
+</div>
+
 
       </div>
     </section>
