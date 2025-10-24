@@ -1,97 +1,136 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Left Side - Newsletter */}
+    <>
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes wave {
+          from { background-position-x: 0; }
+          to { background-position-x: 1000px; }
+        }
+        .animate-fadeUp { animation: fadeUp 1s ease-out forwards; }
+        .animate-fadeUp.delay-300 { animation-delay: 0.3s; }
+        .animate-wave { animation: wave 20s linear infinite; }
+      `}</style>
+
+      <footer className="bg-gradient-to-t from-blue-700 to-blue-400 text-white pt-16 pb-8 px-6 md:px-20 mt-20 relative overflow-hidden">
+        {/* Background animasi gelombang */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 animate-wave bg-[url('https://www.transparenttextures.com/patterns/wavecut.png')]"></div>
+
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto animate-fadeUp">
+          {/* Logo dan Deskripsi */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Subscribe to Our Newsletter</h3>
-            <p className="text-gray-600 mb-4">
-              Sign up to get the inside scoop on everything happening in Reno Tahoe delivered right to your inbox.
+            <h2 className="text-3xl font-bold mb-4 tracking-wide">✈️ TravelEase</h2>
+            <p className="text-sm leading-relaxed">
+              Jelajahi dunia dengan cara terbaik. Kami menyediakan pengalaman wisata yang
+              tak terlupakan, nyaman, dan menyenangkan untuk setiap perjalanan Anda.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md">
+          </div>
+
+          {/* Menu Cepat */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
+              Quick Links
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#" className="hover:text-cyan-300 transition duration-300">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-300 transition duration-300">
+                  Destinations
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-300 transition duration-300">
+                  Packages
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-cyan-300 transition duration-300">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kontak */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
+              Contact
+            </h3>
+            <ul className="text-sm space-y-2">
+              <li>📍 Jakarta, Indonesia</li>
+              <li>📞 +62 812-3456-7890</li>
+              <li>✉️ support@travelease.com</li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
+              Newsletter
+            </h3>
+            <p className="text-sm mb-3">Dapatkan promo menarik & info destinasi terbaru!</p>
+            <form className="flex bg-white/10 rounded-full overflow-hidden border border-white/20 focus-within:ring-2 focus-within:ring-cyan-300 transition">
               <input
                 type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Masukkan email kamu"
+                className="w-full px-4 py-2 bg-transparent text-white placeholder-white/70 focus:outline-none"
+                required
               />
-              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition duration-200 font-medium whitespace-nowrap">
-                Subscribe
+              <button
+                type="submit"
+                className="bg-cyan-300 text-blue-900 px-5 font-bold hover:bg-cyan-400 transition"
+              >
+                Kirim
               </button>
-            </div>
-          </div>
-
-          {/* Right Side - Links Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-3">About Reno Tahoe</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Sustainable Tourism</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Contact Us</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Careers</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-3">Meeting Planners</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Travel Planners</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Sports Planners</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Event Venues</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-3">Media</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Accessibility</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Travel Health & Safety</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-red-500">Plan Your Trip</a></li>
-              </ul>
-            </div>
+            </form>
           </div>
         </div>
 
-        {/* Middle Section - Endorsements & Visitor Guide */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Endorsements */}
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-4">Endorsed By</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="font-bold text-gray-800 w-16">USA</span>
-                <a href="#" className="text-blue-500 hover:text-blue-600">VisitTheUSA.com</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="font-bold text-gray-800 w-16">LEVEL</span>
-                <span className="text-gray-600">Photo Partner</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Visitor Guide */}
-          <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <h4 className="font-semibold text-gray-800 mb-2">Grab Our Visitor Guide</h4>
-            <p className="text-gray-600 text-sm mb-4">
-              It's like we're handing you a ticket to the raddest days of your life.
-            </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm transition duration-200">
-              Free Download
-            </button>
+        {/* Garis bawah & Sosial media */}
+        <div className="relative z-10 mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm animate-fadeUp delay-300">
+          <p>© 2025 TravelEase. All rights reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <a href="#" className="hover:scale-110 transition">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                alt="Facebook"
+                className="w-6 h-6"
+              />
+            </a>
+            <a href="#" className="hover:scale-110 transition">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+                className="w-6 h-6"
+              />
+            </a>
+            <a href="#" className="hover:scale-110 transition">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                alt="YouTube"
+                className="w-6 h-6"
+              />
+            </a>
+            <a href="#" className="hover:scale-110 transition">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                alt="Twitter"
+                className="w-6 h-6"
+              />
+            </a>
           </div>
         </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-200 pt-6 text-center">
-          <p className="text-gray-600 text-sm">
-            ©2025 Reno Tahoe USA. All Rights Reserved.{' '}
-            <a href="#" className="text-gray-600 hover:text-red-500">Privacy Policy</a>
-          </p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
