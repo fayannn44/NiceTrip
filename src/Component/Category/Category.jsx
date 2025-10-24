@@ -4,7 +4,7 @@ function Category() {
   return (
     <section className="w-full py-32 bg-gradient-to-b from-white to-gray-100 flex flex-col items-center overflow-hidden">
       <h1 className="text-6xl sm:text-7xl font-extrabold mb-16 text-gray-900 animate-slideUp text-center">
-        Explore by Category
+        apa yang kamu cari?
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12 max-w-7xl w-full px-6">
@@ -13,7 +13,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-6xl mb-6">
             ✈️
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Flight & Trip</h2>
+          <h2 className="text-3xl font-semibold mb-4">Penerbangan dan Perjalanan</h2>
           <p className="text-gray-500">
             Nikmati perjalanan nyaman dan cepat ke destinasi impianmu dengan berbagai pilihan maskapai dan rute fleksibel.
           </p>
@@ -23,7 +23,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-green-500 to-lime-400 text-white text-6xl mb-6">
             🏔️
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Adventure</h2>
+          <h2 className="text-3xl font-semibold mb-4">Petualangan</h2>
           <p className="text-gray-500">
             Eksplor alam liar dan petualangan ekstrem mulai dari hiking sampai camping.
           </p>
@@ -33,7 +33,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-red-400 text-white text-6xl mb-6">
             📷
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Photography</h2>
+          <h2 className="text-3xl font-semibold mb-4">Fotografi</h2>
           <p className="text-gray-500">
             Abadikan setiap momen dengan hasil terbaik sepanjang perjalananmu.
           </p>
@@ -43,7 +43,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-400 text-white text-6xl mb-6">
             🗺️
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Tour Guide</h2>
+          <h2 className="text-3xl font-semibold mb-4">Pemandu wisata</h2>
           <p className="text-gray-500">
             Panduan wisata terpercaya untuk pengalaman yang lebih maksimal.
           </p>
@@ -53,7 +53,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white text-6xl mb-6">
             ☕
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Culinary</h2>
+          <h2 className="text-3xl font-semibold mb-4">Kuliner</h2>
           <p className="text-gray-500">
             Jelajahi kenikmatan kuliner Nusantara dari Sabang sampai Merauke.
           </p>
@@ -63,7 +63,7 @@ function Category() {
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-6xl mb-6">
             💖
           </div>
-          <h2 className="text-3xl font-semibold mb-4">Wellness</h2>
+          <h2 className="text-3xl font-semibold mb-4">Kesehatan</h2>
           <p className="text-gray-500">
             Healing time dengan spa, yoga, dan relaksasi terbaik.
           </p>
