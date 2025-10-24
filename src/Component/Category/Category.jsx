@@ -1,44 +1,46 @@
 import React from "react";
+import { Plane, Mountain, Camera, Map, Coffee, Heart } from "lucide-react";
 
 function Category() {
   const categories = [
     {
-      icon: "✈️",
+      icon: <Plane size={60} />,
       title: "Flight & Trip",
       desc: "Nikmati perjalanan nyaman dan cepat ke destinasi impianmu dengan berbagai pilihan maskapai dan rute yang fleksibel.",
       color: "from-blue-500 to-cyan-400",
     },
     {
-      icon: "🏔️",
+      icon: <Mountain size={60} />,
       title: "Adventure",
       desc: "Eksplorasi alam liar dan petualangan ekstrem yang menantang, mulai dari hiking, camping, hingga olahraga outdoor seru.",
       color: "from-green-500 to-lime-400",
     },
     {
-      icon: "📷",
+      icon: <Camera size={60} />,
       title: "Photography",
       desc: "Abadikan setiap momen indah di seluruh penjuru nusantara dengan tips dan spot terbaik untuk fotografi.",
       color: "from-pink-500 to-red-400",
     },
     {
-      icon: "🗺️",
+      icon: <Map size={60} />,
       title: "Tour Guide",
       desc: "Panduan wisata terbaik untuk pengalaman yang tak terlupakan, termasuk itineraries, rekomendasi tempat, dan tips lokal.",
       color: "from-indigo-500 to-purple-400",
     },
     {
-      icon: "☕",
+      icon: <Coffee size={60} />,
       title: "Culinary",
       desc: "Rasakan cita rasa khas Indonesia dari Sabang sampai Merauke, termasuk kuliner tradisional dan modern.",
       color: "from-orange-500 to-yellow-400",
     },
     {
-      icon: "💖",
+      icon: <Heart size={60} />,
       title: "Wellness",
       desc: "Temukan pengalaman relaksasi dan wellness, mulai dari spa, yoga, hingga retreat untuk ketenangan jiwa.",
       color: "from-teal-500 to-emerald-400",
     },
   ];
+  
 
   return (
     <section className="w-full py-32 bg-gradient-to-b from-white to-gray-100 flex flex-col items-center overflow-hidden">
@@ -55,7 +57,7 @@ function Category() {
             className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto"
           >
             <div
-              className={`flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r ${cat.color} text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110`}
+              className={`flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r ${cat.color} text-white mb-6 transition-transform duration-500 group-hover:scale-110`}
             >
               {cat.icon}
             </div>
