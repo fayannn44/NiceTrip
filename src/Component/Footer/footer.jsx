@@ -18,11 +18,11 @@ const Footer = () => {
       `}</style>
 
       <footer className="bg-gradient-to-t from-blue-700 to-blue-400 text-white pt-16 pb-8 px-6 md:px-20 mt-20 relative overflow-hidden">
-        {/* Background animasi gelombang */}
+
         <div className="absolute top-0 left-0 w-full h-full opacity-10 animate-wave bg-[url('https://www.transparenttextures.com/patterns/wavecut.png')]"></div>
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto animate-fadeUp">
-          {/* Logo dan Deskripsi */}
+  
           <div>
             <h2 className="text-3xl font-bold mb-4 tracking-wide">✈️ TravelEase</h2>
             <p className="text-sm leading-relaxed">
@@ -31,7 +31,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Menu Cepat */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
               Quick Links
@@ -60,7 +59,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Kontak */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
               Contact
@@ -72,7 +70,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b-2 border-white inline-block pb-1">
               Newsletter
@@ -95,7 +92,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Garis bawah & Sosial media */}
         <div className="relative z-10 mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm animate-fadeUp delay-300">
           <p>© 2025 TravelEase. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
