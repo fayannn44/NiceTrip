@@ -4,7 +4,8 @@ function About() {
   const [expand, setExpand] = useState(false);
 
   return (
-    <section className="w-full flex justify-center items-center bg-white py-20">
+    <section className="w-full flex justify-center items-center bg-white py-20 my-10">
+     
       <div
         className={`relative overflow-hidden bg-gray-800 cursor-pointer transition-all duration-700 ${
           expand ? "w-full max-w-none h-[650px]" : "w-[400px] h-[250px] rounded-xl shadow-lg"
@@ -12,7 +13,6 @@ function About() {
         onClick={() => setExpand(true)}
       >
 
-        {/* GAMBAR */}
         <div
           className={`absolute top-0 transition-all duration-700 ${
             expand
@@ -27,7 +27,6 @@ function About() {
           />
         </div>
 
-        {/* TEKS */}
         <div
           className={`absolute flex flex-col justify-center text-white transition-all duration-700 ${
             expand
@@ -43,7 +42,6 @@ function About() {
           </p>
         </div>
 
-        {/* TITLE AWAL */}
         {!expand && (
           <div className="absolute inset-0 flex items-center justify-center">
             <h1 className="text-white text-2xl font-bold tracking-wide">
