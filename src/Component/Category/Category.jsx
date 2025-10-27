@@ -39,35 +39,7 @@ function Category() {
           </p>
         </div>
 
-        <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center hover:-translate-y-4 transition duration-500">
-          <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-400 text-white text-6xl mb-6">
-            🗺️
-          </div>
-          <h2 className="text-3xl font-semibold mb-4">Pemandu wisata</h2>
-          <p className="text-gray-500">
-            Panduan wisata terpercaya untuk pengalaman yang lebih maksimal.
-          </p>
-        </div>
-
-        <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center hover:-translate-y-4 transition duration-500">
-          <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white text-6xl mb-6">
-            ☕
-          </div>
-          <h2 className="text-3xl font-semibold mb-4">Kuliner</h2>
-          <p className="text-gray-500">
-            Jelajahi kenikmatan kuliner Nusantara dari Sabang sampai Merauke.
-          </p>
-        </div>
-
-        <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center hover:-translate-y-4 transition duration-500">
-          <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-6xl mb-6">
-            💖
-          </div>
-          <h2 className="text-3xl font-semibold mb-4">Kesehatan</h2>
-          <p className="text-gray-500">
-            Healing time dengan spa, yoga, dan relaksasi terbaik.
-          </p>
-        </div>
+        
       </div>
 
       <style>{`
