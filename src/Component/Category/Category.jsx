@@ -3,14 +3,11 @@ import React from "react";
 function Category() {
   return (
     <section className="w-full py-32 bg-gradient-to-b from-white to-gray-100 flex flex-col items-center overflow-hidden">
-      {/* Judul Section */}
       <h1 className="text-6xl sm:text-7xl font-extrabold mb-16 text-gray-900 animate-slideUp opacity-0 text-center">
         Explore by Category
       </h1>
 
-      {/* Grid Kategori */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12 max-w-7xl w-full px-6">
-        {/* Flight & Trip */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             ✈️
@@ -24,7 +21,6 @@ function Category() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
         </div>
 
-        {/* Adventure */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-green-500 to-lime-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             🏔️
@@ -38,7 +34,6 @@ function Category() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-green-500 to-lime-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
         </div>
 
-        {/* Photography */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-red-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             📷
@@ -52,7 +47,6 @@ function Category() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500 to-red-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
         </div>
 
-        {/* Tour Guide */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             🗺️
@@ -66,7 +60,6 @@ function Category() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500 to-purple-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
         </div>
 
-        {/* Culinary */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             ☕
@@ -80,7 +73,6 @@ function Category() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-orange-500 to-yellow-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></div>
         </div>
 
-        {/* Wellness */}
         <div className="relative group bg-white shadow-2xl rounded-3xl p-10 text-center transform transition duration-500 hover:-translate-y-4 hover:shadow-3xl border border-transparent hover:border-gray-200 max-w-md mx-auto">
           <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-teal-500 to-emerald-400 text-white mb-6 text-5xl transition-transform duration-500 group-hover:scale-110">
             💖
@@ -95,7 +87,6 @@ function Category() {
         </div>
       </div>
 
-      {/* Animasi Custom */}
       <style>{`
         @keyframes slideUp {
           0% { opacity: 0; transform: translateY(40px); }
