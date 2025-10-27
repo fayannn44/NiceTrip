@@ -4,20 +4,21 @@ function About() {
   const [expand, setExpand] = useState(false);
 
   return (
-    <section className="w-full flex justify-center items-center bg-white py-20 my-10">
-     
+    <section className="w-full flex justify-center items-center py-20 my-10">
       <div
-        className={`relative overflow-hidden bg-gray-800 cursor-pointer transition-all duration-700 ${
-          expand ? "w-full max-w-none h-[650px]" : "w-[400px] h-[250px] rounded-xl shadow-lg"
-        }`}
+        className={`relative overflow-hidden cursor-pointer transition-all duration-700 flex flex-col md:flex-row ${
+          expand
+            ? "w-full h-auto md:h-[650px] rounded-none" 
+            : "w-[90%] sm:w-[400px] h-[250px] rounded-xl shadow-lg"
+        } bg-black`}
         onClick={() => setExpand(true)}
       >
 
         <div
-          className={`absolute top-0 transition-all duration-700 ${
+          className={`transition-all duration-700 ${
             expand
-              ? "left-0 w-1/2 h-full"
-              : "left-1/2 -translate-x-1/2 w-full h-full"
+              ? "w-full md:w-1/2 h-[200px] md:h-full"
+              : "w-full h-full"
           }`}
         >
           <img
@@ -27,15 +28,18 @@ function About() {
           />
         </div>
 
+
         <div
-          className={`absolute flex flex-col justify-center text-white transition-all duration-700 ${
+          className={`flex flex-col justify-center text-white transition-all duration-700 ${
             expand
-              ? "right-0 top-0 w-1/2 h-full opacity-100 px-16"
-              : "opacity-0"
+              ? "opacity-100 w-full md:w-1/2 px-6 sm:px-10 md:px-16 py-8 text-center md:text-left"
+              : "hidden"
           }`}
         >
-          <h2 className="text-4xl font-bold mb-4">Tentang Nice Trip</h2>
-          <p className="text-lg leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Tentang Nice Trip
+          </h2>
+          <p className="text-base md:text-lg leading-relaxed text-gray-300">
             Nice Trip hadir sebagai teman perjalanan kamu untuk menjelajahi
             keindahan Indonesia. Kami percaya bahwa setiap perjalanan punya
             cerita, dan setiap sudut negeri ini selalu layak untuk dikenal.
