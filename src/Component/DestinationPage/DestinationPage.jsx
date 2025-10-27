@@ -130,14 +130,14 @@ function DestinationPage() {
         {displayed.map((d) => (
           <div
             key={d.name}
-            className="relative rounded-2xl overflow-hidden shadow-lg"
+            className="relative rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
           >
             <img
               src={d.img}
               alt={d.name}
               className="w-full h-56 md:h-64 object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-2 text-center font-semibold">
+            <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-2 text-center font-semibold opacity-100">
               {d.name}
             </div>
           </div>

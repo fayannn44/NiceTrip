@@ -14,11 +14,24 @@ function Destination() {
   ];
 
   const [current, setCurrent] = useState(0);
-  const navigate = useNavigate(); // ✅ taruh di dalam komponen
+  const [fade, setFade] = useState(true);
+  const navigate = useNavigate();
 
-  const prevSlide = () =>
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+      setFade(true);
+    }, 300); // durasi fade
+  };
+
+  const nextSlide = () => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+      setFade(true);
+    }, 300);
+  };
 
   return (
     <section className="w-full min-h-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 py-20">
@@ -56,8 +69,7 @@ function Destination() {
             <img
               src={slides[current].img}
               alt={slides[current].name}
-              className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-2xl shadow-2xl transition-opacity duration-500"
-              key={current}
+              className={`w-full h-64 sm:h-72 md:h-80 object-cover rounded-2xl shadow-2xl transition-opacity duration-300 ${fade ? "opacity-100" : "opacity-0"}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center rounded-2xl">
               <span className="text-white text-2xl sm:text-3xl md:text-4xl font-bold drop-shadow-lg text-center px-2">
@@ -67,7 +79,7 @@ function Destination() {
 
             {/* Tombol Destination */}
             <button
-              onClick={() => navigate("/destination")} // ✅ ini pakai React Router
+              onClick={() => navigate("/destination")}
               className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition text-base sm:text-lg md:text-xl"
             >
               Destination
