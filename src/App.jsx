@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Komponen yang sudah ada
-import Hero from "./Component/Herosection/herosection";
-import Header from "./Component/Header/header";
-import About from "./Component/About/about";
-import Category from "./Component/Category/Category";
-import Destination from "./Component/Destination/Destination";
-import Footer from "./Component/Footer/footer";
-import DestinationPage from "./Component/DestinationPage/DestinationPage";
+import Hero from "./Components/Herosection/herosection";
+import Header from "./Components/Header/header";
+import About from "./Components/About/about";
+import Category from "./Components/Category/Category";
+import Destination from "./Components/Destination/Destination";
+import Footer from "./Components/Footer/footer";
+import DestinationPage from "./Components/DestinationPage/DestinationPage";
+import Preview from "./Components/Preview/Preview";
 
-// Halaman utama HomePage (hanya di App.jsx kita definisikan, tidak buat file baru)
 const HomePage = () => {
   return (
     <>
@@ -19,6 +18,7 @@ const HomePage = () => {
       <About />
       <Category />
       <Destination />
+      <Preview />
       <Footer />
     </>
   );
@@ -28,10 +28,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Halaman utama */}
         <Route path="/" element={<HomePage />} />
 
-        {/* Halaman destinasi */}
         <Route path="/destination" element={<DestinationPage />} />
       </Routes>
     </Router>
