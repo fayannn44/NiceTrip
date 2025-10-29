@@ -1,83 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Footer = () => {
+function Event() {
+  const events = [
+    {
+      id: 1,
+      title: "Festival Musik",
+      date: "15 Nov 2025",
+      desc: "Konser musik besar dengan artis populer dan suasana outdoor seru.",
+      img: "https://picsum.photos/seed/music/900/500",
+    },
+    {
+      id: 2,
+      title: "Pameran Seni",
+      date: "22 Nov 2025",
+      desc: "Pameran seni kreatif dari seniman lokal dan internasional.",
+      img: "https://picsum.photos/seed/art/900/500",
+    },
+    {
+      id: 3,
+      title: "Workshop Coding",
+      date: "5 Des 2025",
+      desc: "Belajar bikin website modern pakai React JS.",
+      img: "https://picsum.photos/seed/code/900/500",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  const prev = () => index > 0 && setIndex(index - 1);
+  const next = () => index < events.length - 1 && setIndex(index + 1);
+
   return (
-    <>
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes wave {
-          from { background-position-x: 0; }
-          to { background-position-x: 1000px; }
-        }
-        .animate-fadeUp { animation: fadeUp 1s ease-out forwards; }
-        .animate-fadeUp.delay-300 { animation-delay: 0.3s; }
-        .animate-wave { animation: wave 20s linear infinite; }
-      `}</style>
+    <div className="w-full flex justify-center px-6 py-20 bg-[#0f172a]">
+      <div className="w-full max-w-[1200px] relative bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl">
 
-      <footer className="bg-[#111827] text-white pt-16 pb-8 px-6 md:px-20 mt-20 relative overflow-hidden">
+        <h2 className="text-3xl font-bold text-white mb-6 text-center tracking-wide">
+          Event Terbaru
+        </h2>
 
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 animate-wave bg-[url('https://www.transparenttextures.com/patterns/wavecut.png')]"></div>
+        {/* Tombol kiri */}
+        <button
+          onClick={prev}
+          disabled={index === 0}
+          className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/15 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl hover:bg-white/30 transition disabled:opacity-30"
+        >
+          ⬅
+        </button>
 
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10 max-w-6xl mx-auto animate-fadeUp">
-  
-          <div>
-            <h2 className="text-3xl font-bold mb-4 tracking-wide">✈️ TravelEase</h2>
-            <p className="text-sm leading-relaxed text-gray-300">
-              Jelajahi dunia dengan cara terbaik. Kami menyediakan pengalaman wisata yang
-              tak terlupakan, nyaman, dan menyenangkan untuk setiap perjalanan Anda.
-            </p>
-          </div>
+        {/* Tombol kanan */}
+        <button
+          onClick={next}
+          disabled={index === events.length - 1}
+          className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/15 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl hover:bg-white/30 transition disabled:opacity-30"
+        >
+          ➡
+        </button>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-gray-500 inline-block pb-1">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-gray-300 transition">Home</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition">Destinations</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition">Packages</a></li>
-              <li><a href="#" className="hover:text-gray-300 transition">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-gray-500 inline-block pb-1">
-              Contact
-            </h3>
-            <ul className="text-sm space-y-2 text-gray-300">
-              <li>📍 Jakarta, Indonesia</li>
-              <li>📞 +62 812-3456-7890</li>
-              <li>✉️ support@travelease.com</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 border-b-2 border-gray-500 inline-block pb-1">
-              Newsletter
-            </h3>
-            <p className="text-sm mb-3 text-gray-300">Dapatkan promo menarik & info destinasi terbaru!</p>
-            <form className="flex bg-white/10 rounded-full overflow-hidden border border-white/20 focus-within:ring-2 focus-within:ring-gray-500 transition">
-              <input type="email" placeholder="Masukkan email kamu" className="w-full px-4 py-2 bg-transparent text-white placeholder-gray-400 focus:outline-none" required />
-              <button type="submit" className="bg-gray-300 text-black px-5 font-bold hover:bg-white transition">Kirim</button>
-            </form>
+        {/* Card Event */}
+        <div className="rounded-xl overflow-hidden border border-white/10 shadow-lg">
+          <img src={events[index].img} alt={events[index].title} className="w-full h-[350px] object-cover" />
+          <div className="p-6 bg-white/10 backdrop-blur-md text-white">
+            <p className="text-sm text-gray-300">{events[index].date}</p>
+            <h3 className="text-2xl font-bold mt-1">{events[index].title}</h3>
+            <p className="text-gray-300 mt-2">{events[index].desc}</p>
           </div>
         </div>
 
-        <div className="relative z-10 mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm animate-fadeUp delay-300">
-          <p className="text-gray-400">© 2025 TravelEase. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:scale-110 transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="w-6 h-6" /></a>
-            <a href="#" className="hover:scale-110 transition"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="w-6 h-6" /></a>
-            <a href="#" className="hover:scale-110 transition"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" className="w-6 h-6" /></a>
-            <a href="#" className="hover:scale-110 transition"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" className="w-6 h-6" /></a>
-          </div>
+        {/* Indikator */}
+        <div className="flex justify-center mt-6 gap-3">
+          {events.map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 rounded-full transition ${i === index ? "bg-white scale-125 shadow-lg" : "bg-white/30"}`}
+            ></div>
+          ))}
         </div>
-      </footer>
-    </>
+      </div>
+    </div>
   );
-};
+}
 
-export default Footer;
+export default Event;

@@ -9,6 +9,7 @@ import Category from "./Component/Category/Category";
 import Destination from "./Component/Destination/Destination";
 import Footer from "./Component/Footer/footer";
 import DestinationPage from "./Component/DestinationPage/DestinationPage";
+import Event from "./Component/Event/event";
 
 // Halaman utama HomePage (hanya di App.jsx kita definisikan, tidak buat file baru)
 const HomePage = () => {
@@ -19,6 +20,7 @@ const HomePage = () => {
       <About />
       <Category />
       <Destination />
+      <Event />
       <Footer />
     </>
   );
