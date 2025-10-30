@@ -7,16 +7,46 @@ function DestinationPage() {
   const categories = ["Tempat Hening", "Keluarga", "Petualangan"];
 
   const allDestinations = [
-    { name: "Bali", category: "Keluarga", img: "https://picsum.photos/id/1018/400/300" },
-    { name: "Raja Ampat", category: "Petualangan", img: "https://picsum.photos/id/1015/400/300" },
-    { name: "Pulau Komodo", category: "Petualangan", img: "https://picsum.photos/id/1019/400/300" },
-    { name: "Candi Borobudur", category: "Tempat Hening", img: "https://picsum.photos/id/1020/400/300" },
-    { name: "Lombok", category: "Keluarga", img: "https://picsum.photos/id/1021/400/300" },
-    { name: "Bunaken", category: "Tempat Hening", img: "https://picsum.photos/id/1022/400/300" },
-    { name: "Labuan Bajo", category: "Petualangan", img: "https://picsum.photos/id/1023/400/300" },
-    { name: "Bromo", category: "Petualangan", img: "https://picsum.photos/id/1024/400/300" },
-    { name: "Gili Trawangan", category: "Keluarga", img: "https://picsum.photos/id/1025/400/300" },
-    { name: "Ubud", category: "Tempat Hening", img: "https://picsum.photos/id/1026/400/300" },
+    { name: "Bali", category: "Keluarga", img: "https://source.unsplash.com/400x300/?bali&sig=1" },
+    { name: "Raja Ampat", category: "Petualangan", img: "https://source.unsplash.com/400x300/?raja-ampat&sig=2" },
+    { name: "Pulau Komodo", category: "Petualangan", img: "https://source.unsplash.com/400x300/?komodo&sig=3" },
+    { name: "Candi Borobudur", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?borobudur&sig=4" },
+    { name: "Lombok", category: "Keluarga", img: "https://source.unsplash.com/400x300/?lombok&sig=5" },
+    { name: "Bunaken", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?bunaken&sig=6" },
+    { name: "Labuan Bajo", category: "Petualangan", img: "https://source.unsplash.com/400x300/?labuan-bajo&sig=7" },
+    { name: "Bromo", category: "Petualangan", img: "https://source.unsplash.com/400x300/?bromo&sig=8" },
+    { name: "Gili Trawangan", category: "Keluarga", img: "https://source.unsplash.com/400x300/?gili-trawangan&sig=9" },
+    { name: "Ubud", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?ubud&sig=10" },
+    { name: "Danau Toba", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?danau-toba&sig=11" },
+    { name: "Derawan", category: "Petualangan", img: "https://source.unsplash.com/400x300/?derawan&sig=12" },
+    { name: "Wakatobi", category: "Petualangan", img: "https://source.unsplash.com/400x300/?wakatobi&sig=13" },
+    { name: "Tana Toraja", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?tana-toraja&sig=14" },
+    { name: "Belitung", category: "Keluarga", img: "https://source.unsplash.com/400x300/?belitung&sig=15" },
+    { name: "Bangka", category: "Keluarga", img: "https://source.unsplash.com/400x300/?bangka&sig=16" },
+    { name: "Karimun Jawa", category: "Keluarga", img: "https://source.unsplash.com/400x300/?karimun-jawa&sig=17" },
+    { name: "Tidung", category: "Keluarga", img: "https://source.unsplash.com/400x300/?tidung&sig=18" },
+    { name: "Pangandaran", category: "Keluarga", img: "https://source.unsplash.com/400x300/?pangandaran&sig=19" },
+    { name: "Bintan", category: "Keluarga", img: "https://source.unsplash.com/400x300/?bintan&sig=20" },
+    { name: "Pulau Weh", category: "Petualangan", img: "https://source.unsplash.com/400x300/?pulau-weh&sig=21" },
+    { name: "Nusa Penida", category: "Petualangan", img: "https://source.unsplash.com/400x300/?nusa-penida&sig=22" },
+    { name: "Sempu", category: "Petualangan", img: "https://source.unsplash.com/400x300/?sempu&sig=23" },
+    { name: "Gili Air", category: "Petualangan", img: "https://source.unsplash.com/400x300/?gili-air&sig=24" },
+    { name: "Gili Meno", category: "Petualangan", img: "https://source.unsplash.com/400x300/?gili-meno&sig=25" },
+    { name: "Tanjung Lesung", category: "Keluarga", img: "https://source.unsplash.com/400x300/?tanjung-lesung&sig=26" },
+    { name: "Kuta", category: "Keluarga", img: "https://source.unsplash.com/400x300/?kuta&sig=27" },
+    { name: "Sanur", category: "Keluarga", img: "https://source.unsplash.com/400x300/?sanur&sig=28" },
+    { name: "Lovina", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?lovina&sig=29" },
+    { name: "Menjangan", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?menjangan&sig=30" },
+    { name: "Ciletuh", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?ciletuh&sig=31" },
+    { name: "Karimunjawa", category: "Petualangan", img: "https://source.unsplash.com/400x300/?karimunjawa&sig=32" },
+    { name: "Pulau Seribu", category: "Petualangan", img: "https://source.unsplash.com/400x300/?pulau-seribu&sig=33" },
+    { name: "Belitong", category: "Keluarga", img: "https://source.unsplash.com/400x300/?belitong&sig=34" },
+    { name: "Situbondo", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?situbondo&sig=35" },
+    { name: "Batu", category: "Keluarga", img: "https://source.unsplash.com/400x300/?batu&sig=36" },
+    { name: "Malang", category: "Keluarga", img: "https://source.unsplash.com/400x300/?malang&sig=37" },
+    { name: "Bandung", category: "Keluarga", img: "https://source.unsplash.com/400x300/?bandung&sig=38" },
+    { name: "Jogja", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?jogja&sig=39" },
+    { name: "Solo", category: "Tempat Hening", img: "https://source.unsplash.com/400x300/?solo&sig=40" },
   ];
 
   const [displayed, setDisplayed] = useState(allDestinations);
@@ -51,7 +81,6 @@ function DestinationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#c9f3e3] to-[#67C090]/40 px-6 py-16">
-      {/* Tombol Kembali */}
       <div className="flex justify-start mb-6">
         <button
           onClick={() => navigate("/")}
@@ -65,7 +94,6 @@ function DestinationPage() {
         Jelajahi Destinasi
       </h1>
 
-      {/* Search & All */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
         <input
           type="text"
@@ -82,7 +110,6 @@ function DestinationPage() {
         </button>
       </div>
 
-      {/* Category Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -99,7 +126,6 @@ function DestinationPage() {
         ))}
       </div>
 
-      {/* Grid Destinasi */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {displayed.map((d) => (
           <div

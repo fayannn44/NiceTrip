@@ -4,18 +4,28 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <div className="text-2xl font-bold text-gray-800 select-none">
+        <div
+          className="text-2xl font-bold select-none text-white font-[Poppins]"
+          style={{ letterSpacing: "0.5px" }}
+        >
           Nice Trip
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
-          <a href="/" className="hover:text-blue-600">Home</a>
-          <a href="/category" className="hover:text-blue-600">Category</a>
-          <a href="/destination" className="hover:text-blue-600">Destination</a>
-          <a href="/event" className="hover:text-blue-600">Event</a>
-          <a href="/review" className="hover:text-blue-600">Review</a>
+        <nav className="hidden md:flex items-center space-x-8 text-white font-[Lora]">
+          <a href="#category" className="hover:text-[#67C090] transition">
+            Category
+          </a>
+          <a href="#destination" className="hover:text-[#67C090] transition">
+            Destination
+          </a>
+          <a href="#event" className="hover:text-[#67C090] transition">
+            Event
+          </a>
+          <a href="#review" className="hover:text-[#67C090] transition">
+            Review
+          </a>
         </nav>
 
         <button
@@ -41,13 +51,20 @@ function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <nav className="flex flex-col space-y-4 px-6 py-4 text-gray-700 font-medium">
-            <a href="/" className="hover:text-blue-600">Home</a>
-            <a href="/" className="hover:text-blue-600">Category</a>
-            <a href="/" className="hover:text-blue-600">Destination</a>
-            <a href="/" className="hover:text-blue-600">Event</a>
-            <a href="/" className="hover:text-blue-600">Review</a>
+        <div className="md:hidden bg-white/10 backdrop-blur-2xl shadow-lg border-t border-white/10">
+          <nav className="flex flex-col space-y-4 px-6 py-4 text-white font-[Lora]">
+            <a href="#category" className="hover:text-[#67C090] transition">
+              Category
+            </a>
+            <a href="#destination" className="hover:text-[#67C090] transition">
+              Destination
+            </a>
+            <a href="#event" className="hover:text-[#67C090] transition">
+              Event
+            </a>
+            <a href="#review" className="hover:text-[#67C090] transition">
+              Review
+            </a>
           </nav>
         </div>
       )}

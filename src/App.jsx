@@ -19,7 +19,6 @@ const HomePage = () => {
       <About />
       <Category />
       <Destination />
-      <Event />
       <Preview />
       <Event />
       <Footer />
