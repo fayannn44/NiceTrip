@@ -4,8 +4,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#67C090]/80 backdrop-blur-md shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 overflow-hidden">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Logo */}
         <div
@@ -17,16 +17,16 @@ function Header() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8 text-white font-[Lora]">
-          <a href="#category" className="hover:text-gray-200 transition">
+          <a href="#category" className="hover:text-[#67C090] transition">
             Category
           </a>
-          <a href="#destination" className="hover:text-gray-200 transition">
+          <a href="#destination" className="hover:text-[#67C090] transition">
             Destination
           </a>
-          <a href="#event" className="hover:text-gray-200 transition">
+          <a href="#event" className="hover:text-[#67C090] transition">
             Event
           </a>
-          <a href="#review" className="hover:text-gray-200 transition">
+          <a href="#review" className="hover:text-[#67C090] transition">
             Review
           </a>
         </nav>
@@ -56,18 +56,18 @@ function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#67C090]/90 backdrop-blur-lg shadow-md">
+        <div className="md:hidden bg-white/10 backdrop-blur-2xl shadow-lg border-t border-white/10">
           <nav className="flex flex-col space-y-4 px-6 py-4 text-white font-[Lora]">
-            <a href="#category" className="hover:text-gray-200 transition">
+            <a href="#category" className="hover:text-[#67C090] transition">
               Category
             </a>
-            <a href="#destination" className="hover:text-gray-200 transition">
+            <a href="#destination" className="hover:text-[#67C090] transition">
               Destination
             </a>
-            <a href="#event" className="hover:text-gray-200 transition">
+            <a href="#event" className="hover:text-[#67C090] transition">
               Event
             </a>
-            <a href="#review" className="hover:text-gray-200 transition">
+            <a href="#review" className="hover:text-[#67C090] transition">
               Review
             </a>
           </nav>
