@@ -2,37 +2,48 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-br from-gray-900 via-indigo-900 to-black text-white py-10 px-6 mt-20 border-t border-white/10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+    <footer className="bg-[#f5f5f5] text-gray-800 py-16 px-6 md:px-20 border-t border-gray-200">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
         <div>
-          <h2 className="text-2xl font-bold tracking-wide mb-3">EventWave</h2>
-          <p className="text-sm text-gray-300 leading-relaxed">
-            Platform modern untuk menjelajahi berbagai event seru, konser, dan workshop keren di seluruh Indonesia.
+          <h2 className="text-3xl font-extrabold mb-3">NiceTrip</h2>
+          <p className="text-gray-600 text-sm">
+            Travel tanpa ribet bersama NiceTrip. Jelajahi dunia nyaman dan penuh pengalaman baru.
           </p>
         </div>
-
         <div>
-          <h3 className="text-lg font-semibold mb-3">Navigasi</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li><a href="/" className="hover:text-indigo-400 transition">Home</a></li>
-            <li><a href="/" className="hover:text-indigo-400 transition">Event</a></li>
-            <li><a href="/" className="hover:text-indigo-400 transition">Gallery</a></li>
-            <li><a href="/" className="hover:text-indigo-400 transition">Contact</a></li>
+          <h3 className="text-lg font-semibold mb-4">Explore</h3>
+          <ul className="space-y-2 text-gray-600">
+            <li>Home</li>
+            <li>Destinations</li>
+            <li>Packages</li>
+            <li>Gallery</li>
           </ul>
         </div>
-
         <div>
-          <h3 className="text-lg font-semibold mb-3">Ikuti Kami</h3>
-          <div className="flex justify-center md:justify-start gap-4">
-            <a href="https://www.eventwave.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-indigo-500 transition text-lg">🌐</a>
-            <a href="https://instagram.com/eventwave" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-indigo-500 transition text-lg">📸</a>
-            <a href="https://twitter.com/eventwave" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-indigo-500 transition text-lg">🐦</a>
-          </div>
+          <h3 className="text-lg font-semibold mb-4">Support</h3>
+          <ul className="space-y-2 text-gray-600">
+            <li>📍 Jakarta, Indonesia</li>
+            <li>📞 +62 821-1234-5678</li>
+            <li>✉️ support@nicetrip.com</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+          <form className="flex bg-white border border-gray-300 rounded-full overflow-hidden">
+            <input
+              type="email"
+              placeholder="Masukkan email kamu"
+              className="w-full px-4 py-2 text-sm text-gray-700 outline-none"
+            />
+            <button className="bg-gray-800 text-white px-6 text-sm font-semibold hover:bg-gray-700 transition">
+              Kirim
+            </button>
+          </form>
         </div>
       </div>
 
-      <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} EventWave. All rights reserved.
+      <div className="mt-12 border-t border-gray-200 pt-6 text-center text-gray-500 text-sm">
+        © 2025 NiceTrip. All rights reserved.
       </div>
     </footer>
   );
