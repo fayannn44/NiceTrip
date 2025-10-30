@@ -1,83 +1,83 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Event() {
-  const events = [
-    {
-      id: 1,
-      title: "Festival Musik",
-      date: "15 Nov 2025",
-      desc: "Konser musik besar dengan artis populer dan suasana outdoor seru.",
-      img: "https://picsum.photos/seed/music/900/500",
-    },
-    {
-      id: 2,
-      title: "Pameran Seni",
-      date: "22 Nov 2025",
-      desc: "Pameran seni kreatif dari seniman lokal dan internasional.",
-      img: "https://picsum.photos/seed/art/900/500",
-    },
-    {
-      id: 3,
-      title: "Workshop Coding",
-      date: "5 Des 2025",
-      desc: "Belajar bikin website modern pakai React JS.",
-      img: "https://picsum.photos/seed/code/900/500",
-    },
-  ];
-
-  const [index, setIndex] = useState(0);
-
-  const prev = () => index > 0 && setIndex(index - 1);
-  const next = () => index < events.length - 1 && setIndex(index + 1);
-
+const Footer = () => {
   return (
-    <div className="w-full flex justify-center px-6 py-20 bg-[#0f172a]">
-      <div className="w-full max-w-[1200px] relative bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl">
+    <footer className="relative bg-gradient-to-b from-[#67C090] to-[#4FA374] text-white py-20 px-6 sm:px-10 md:px-20 overflow-hidden">
 
-        <h2 className="text-3xl font-bold text-white mb-6 text-center tracking-wide">
-          Event Terbaru
-        </h2>
+      {/* Background Big Text Responsive */}
+      <h1 className="absolute top-10 md:top-1/2 md:-translate-y-1/2 left-0 right-0 text-center text-[50px] sm:text-[80px] md:text-[160px] font-extrabold text-white/5 md:text-white/10 tracking-widest select-none pointer-events-none">
+        NICE TRIP
+      </h1>
 
-        {/* Tombol kiri */}
-        <button
-          onClick={prev}
-          disabled={index === 0}
-          className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/15 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl hover:bg-white/30 transition disabled:opacity-30"
-        >
-          ⬅
-        </button>
+      {/* Glow effect */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-[#67C090]/30 blur-[120px] rounded-full pointer-events-none"></div>
 
-        {/* Tombol kanan */}
-        <button
-          onClick={next}
-          disabled={index === events.length - 1}
-          className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/15 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl hover:bg-white/30 transition disabled:opacity-30"
-        >
-          ➡
-        </button>
+      {/* Content */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
 
-        {/* Card Event */}
-        <div className="rounded-xl overflow-hidden border border-white/10 shadow-lg">
-          <img src={events[index].img} alt={events[index].title} className="w-full h-[350px] object-cover" />
-          <div className="p-6 bg-white/10 backdrop-blur-md text-white">
-            <p className="text-sm text-gray-300">{events[index].date}</p>
-            <h3 className="text-2xl font-bold mt-1">{events[index].title}</h3>
-            <p className="text-gray-300 mt-2">{events[index].desc}</p>
-          </div>
+        <div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">NiceTrip</h2>
+          <p className="text-white/90 leading-relaxed text-sm sm:text-base">
+            Travel tanpa ribet bersama NiceTrip. Jelajahi dunia nyaman, aman,
+            dan penuh pengalaman baru. ✈️🌍
+          </p>
         </div>
 
-        {/* Indikator */}
-        <div className="flex justify-center mt-6 gap-3">
-          {events.map((_, i) => (
-            <div
-              key={i}
-              className={`w-3 h-3 rounded-full transition ${i === index ? "bg-white scale-125 shadow-lg" : "bg-white/30"}`}
-            ></div>
-          ))}
+        <div>
+          <h3 className="text-lg font-semibold mb-4 border-b-2 border-[#67C090]/80 inline-block pb-1">
+            Explore
+          </h3>
+          <ul className="space-y-2 text-white/80 text-sm sm:text-base">
+            <li><a href="#" className="hover:text-white transition">Home</a></li>
+            <li><a href="#" className="hover:text-white transition">Destinations</a></li>
+            <li><a href="#" className="hover:text-white transition">Packages</a></li>
+            <li><a href="#" className="hover:text-white transition">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-4 border-b-2 border-[#67C090]/80 inline-block pb-1">
+            Support
+          </h3>
+          <ul className="text-white/80 space-y-2 text-sm sm:text-base">
+            <li>📍 Jakarta, Indonesia</li>
+            <li>📞 +62 821-1234-5678</li>
+            <li>✉️ support@nicetrip.com</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-4 border-b-2 border-[#67C090]/80 inline-block pb-1">
+            Newsletter
+          </h3>
+          <p className="text-sm text-white/80 mb-3">
+            Dapetin update promo terbaik!
+          </p>
+          <form className="flex bg-white/10 backdrop-blur-lg rounded-full overflow-hidden border border-white/20">
+            <input
+              type="email"
+              placeholder="Masukkan email kamu"
+              className="w-full px-3 sm:px-4 py-2 text-sm bg-transparent text-white placeholder-white/60 outline-none"
+            />
+            <button className="bg-[#67C090] hover:bg-[#57B080] px-4 sm:px-6 text-sm font-bold">
+              Kirim
+            </button>
+          </form>
         </div>
       </div>
-    </div>
-  );
-}
 
-export default Event;
+      {/* Footer Bottom */}
+      <div className="relative z-10 mt-14 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-white/70 text-xs sm:text-sm">
+        <p>© 2025 NiceTrip. All rights reserved.</p>
+        <div className="flex gap-4 mt-4 md:mt-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" className="w-5 sm:w-6 opacity-75 hover:opacity-100 transition" />
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" className="w-5 sm:w-6 opacity-75 hover:opacity-100 transition" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" className="w-5 sm:w-6 opacity-75 hover:opacity-100 transition" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" className="w-5 sm:w-6 opacity-75 hover:opacity-100 transition" />
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

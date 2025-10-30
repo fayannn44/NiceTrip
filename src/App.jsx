@@ -9,6 +9,7 @@ import Destination from "./Components/Destination/Destination";
 import Footer from "./Components/Footer/footer";
 import DestinationPage from "./Components/DestinationPage/DestinationPage";
 import Preview from "./Components/Preview/Preview";
+import Event from "./Components/Event/event";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <About />
       <Category />
       <Destination />
+      <Event />
       <Preview />
       <Footer />
     </>

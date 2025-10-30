@@ -17,32 +17,6 @@ function DestinationPage() {
     { name: "Bromo", category: "Petualangan", img: "https://picsum.photos/id/1024/400/300" },
     { name: "Gili Trawangan", category: "Keluarga", img: "https://picsum.photos/id/1025/400/300" },
     { name: "Ubud", category: "Tempat Hening", img: "https://picsum.photos/id/1026/400/300" },
-    { name: "Tanjung Puting", category: "Petualangan", img: "https://picsum.photos/id/1027/400/300" },
-    { name: "Derawan", category: "Petualangan", img: "https://picsum.photos/id/1028/400/300" },
-    { name: "Pulau Weh", category: "Tempat Hening", img: "https://picsum.photos/id/1029/400/300" },
-    { name: "Malang", category: "Keluarga", img: "https://picsum.photos/id/1030/400/300" },
-    { name: "Yogyakarta", category: "Tempat Hening", img: "https://picsum.photos/id/1031/400/300" },
-    { name: "Aceh", category: "Petualangan", img: "https://picsum.photos/id/1032/400/300" },
-    { name: "Manado", category: "Tempat Hening", img: "https://picsum.photos/id/1033/400/300" },
-    { name: "Belitung", category: "Keluarga", img: "https://picsum.photos/id/1034/400/300" },
-    { name: "Sumatera Barat", category: "Tempat Hening", img: "https://picsum.photos/id/1035/400/300" },
-    { name: "Toraja", category: "Tempat Hening", img: "https://picsum.photos/id/1036/400/300" },
-    { name: "Semarang", category: "Keluarga", img: "https://picsum.photos/id/1037/400/300" },
-    { name: "Jakarta", category: "Keluarga", img: "https://picsum.photos/id/1038/400/300" },
-    { name: "Bandung", category: "Tempat Hening", img: "https://picsum.photos/id/1039/400/300" },
-    { name: "Medan", category: "Petualangan", img: "https://picsum.photos/id/1040/400/300" },
-    { name: "Padang", category: "Tempat Hening", img: "https://picsum.photos/id/1041/400/300" },
-    { name: "Palembang", category: "Keluarga", img: "https://picsum.photos/id/1042/400/300" },
-    { name: "Pontianak", category: "Petualangan", img: "https://picsum.photos/id/1043/400/300" },
-    { name: "Banda Aceh", category: "Tempat Hening", img: "https://picsum.photos/id/1044/400/300" },
-    { name: "Makassar", category: "Keluarga", img: "https://picsum.photos/id/1045/400/300" },
-    { name: "Kupang", category: "Petualangan", img: "https://picsum.photos/id/1046/400/300" },
-    { name: "Samarinda", category: "Tempat Hening", img: "https://picsum.photos/id/1047/400/300" },
-    { name: "Balikpapan", category: "Keluarga", img: "https://picsum.photos/id/1048/400/300" },
-    { name: "Jayapura", category: "Petualangan", img: "https://picsum.photos/id/1049/400/300" },
-    { name: "Maluku", category: "Tempat Hening", img: "https://picsum.photos/id/1050/400/300" },
-    { name: "Bengkulu", category: "Keluarga", img: "https://picsum.photos/id/1051/400/300" },
-    { name: "Jambi", category: "Petualangan", img: "https://picsum.photos/id/1052/400/300" },
   ];
 
   const [displayed, setDisplayed] = useState(allDestinations);
@@ -76,48 +50,48 @@ function DestinationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-200 to-blue-200 px-6 py-12">
-      {/* Button Kembali ke Home */}
+    <div className="min-h-screen bg-gradient-to-b from-[#c9f3e3] to-[#67C090]/40 px-6 py-16">
+      {/* Tombol Kembali */}
       <div className="flex justify-start mb-6">
         <button
           onClick={() => navigate("/")}
-          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition text-lg font-semibold shadow-md"
+          className="bg-[#67C090] text-white px-6 py-2 rounded-lg hover:bg-[#56a67b] transition text-lg font-semibold shadow-md"
         >
-          Kembali ke Home
+          ← Kembali ke Home
         </button>
       </div>
 
-      <h1 className="text-5xl font-bold text-gray-900 mb-8 text-center">
-        Halaman Destinasi
+      <h1 className="text-5xl font-extrabold text-gray-800 mb-10 text-center drop-shadow-sm">
+        Jelajahi Destinasi
       </h1>
 
       {/* Search & All */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
         <input
           type="text"
           placeholder="Cari destinasi..."
           value={search}
           onChange={handleSearch}
-          className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 w-full sm:w-64"
+          className="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#67C090] w-full sm:w-72 shadow-sm"
         />
         <button
           onClick={showAll}
-          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-500 transition"
+          className="bg-[#67C090] text-white px-6 py-3 rounded-xl hover:bg-[#56a67b] transition font-semibold shadow-md"
         >
-          All
+          Tampilkan Semua
         </button>
       </div>
 
-      {/* Category */}
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
+      {/* Category Buttons */}
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => handleCategory(cat)}
-            className={`px-4 py-2 rounded-lg text-white font-semibold transition ${
+            className={`px-5 py-2.5 rounded-full font-semibold transition shadow-md ${
               activeCategory === cat
-                ? "bg-green-700"
-                : "bg-green-600 hover:bg-green-500"
+                ? "bg-[#56a67b] text-white"
+                : "bg-white text-[#67C090] border border-[#67C090] hover:bg-[#67C090] hover:text-white"
             }`}
           >
             {cat}
@@ -125,20 +99,22 @@ function DestinationPage() {
         ))}
       </div>
 
-      {/* Foto destinasi */}
+      {/* Grid Destinasi */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {displayed.map((d) => (
           <div
             key={d.name}
-            className="relative rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+            className="relative rounded-2xl overflow-hidden shadow-lg group transform transition duration-500 hover:scale-105"
           >
             <img
               src={d.img}
               alt={d.name}
-              className="w-full h-56 md:h-64 object-cover"
+              className="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-2 text-center font-semibold opacity-100">
-              {d.name}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+              <p className="text-white text-lg font-bold tracking-wide drop-shadow-md">
+                {d.name}
+              </p>
             </div>
           </div>
         ))}
