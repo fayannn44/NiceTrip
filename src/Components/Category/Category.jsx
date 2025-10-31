@@ -25,7 +25,7 @@ function Category() {
   return (
     <section className="w-full py-32 bg-gradient-to-b from-white to-gray-100 flex flex-col items-center overflow-hidden">
       <h1 className="text-5xl sm:text-6xl font-extrabold mb-16 text-gray-900 animate-slideUp text-center leading-tight">
-        Apa yang kamu cari?
+        Apa yang Kita punya ?
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl w-full px-6">

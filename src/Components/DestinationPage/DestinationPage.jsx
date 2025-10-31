@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function DestinationPage() {
+function DestinationPage() {
   const navigate = useNavigate();
 
   const categories = ["Tempat Hening", "Keluarga", "Petualangan"];
 
-  // 30 destinasi (img menggunakan HTTPS via source.unsplash.com — mudah diganti ke URL lain)
+  // 30 destinasi
   const allDestinations = [
     { name: "Bali", category: "Keluarga", img: "https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QkFMSXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600" },
     { name: "Raja Ampat", category: "Petualangan", img: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFqYSUyMGFtcGF0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" },
@@ -73,21 +73,25 @@ export default function DestinationPage() {
 
   return (
     <div className="min-h-screen bg-white px-6 py-16 text-gray-900">
-      {/* Tombol Kembali */}
+      {/* Tombol Kembali ke Home */}
       <div className="flex justify-start mb-6">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/")} // ← perbaikan: langsung ke HomePage
           className="bg-white border border-gray-200 text-gray-800 px-5 py-2 rounded-lg hover:shadow-sm transition text-lg font-semibold"
         >
           ← Kembali ke Home
         </button>
       </div>
 
-      <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-center" style={{ fontFamily: "Poppins, system-ui, -apple-system" }}>
+      {/* Judul */}
+      <h1
+        className="text-4xl sm:text-5xl font-extrabold mb-8 text-center"
+        style={{ fontFamily: "Poppins, system-ui" }}
+      >
         Jelajahi Destinasi Indonesia
       </h1>
 
-      {/* Search & All */}
+      {/* Search & Tampilkan Semua */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <input
           type="text"
@@ -130,19 +134,27 @@ export default function DestinationPage() {
             key={d.name}
             className="relative rounded-2xl overflow-hidden shadow-sm group bg-white border border-gray-100"
           >
-            {/* prevent too-zoomed look: use object-contain with fixed height + subtle bg */}
             <div className="w-full h-44 bg-gray-50 flex items-center justify-center overflow-hidden">
               <img
                 src={d.img}
                 alt={d.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                style={{ maxHeight: "100%", width: "100%" }}
               />
             </div>
 
             <div className="p-4">
-              <h3 className="text-lg font-semibold mb-1" style={{ fontFamily: "Poppins, system-ui" }}>{d.name}</h3>
-              <p className="text-sm text-gray-600" style={{ fontFamily: "Lora, serif" }}>{d.category}</p>
+              <h3
+                className="text-lg font-semibold mb-1"
+                style={{ fontFamily: "Poppins, system-ui" }}
+              >
+                {d.name}
+              </h3>
+              <p
+                className="text-sm text-gray-600"
+                style={{ fontFamily: "Lora, serif" }}
+              >
+                {d.category}
+              </p>
             </div>
           </article>
         ))}
@@ -150,3 +162,5 @@ export default function DestinationPage() {
     </div>
   );
 }
+
+export default DestinationPage;

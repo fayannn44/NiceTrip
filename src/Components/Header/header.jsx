@@ -5,12 +5,23 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (id) => {
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setMenuOpen(false);
+      return;
+    }
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <header
@@ -20,64 +31,38 @@ function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div
-          className="text-2xl font-bold select-none font-[Poppins]"
+          className="text-2xl font-bold select-none font-[Poppins] cursor-pointer"
           style={{ letterSpacing: "0.5px" }}
+          onClick={() => scrollToSection("top")}
         >
           Nice Trip
         </div>
 
         <nav className="hidden md:flex items-center space-x-8 font-[Lora]">
-          <a href="#category" className="hover:text-black transition">
-            Category
-          </a>
-          <a href="#destination" className="hover:text-black transition">
-            Destination
-          </a>
-          <a href="#event" className="hover:text-black transition">
-            Event
-          </a>
-          <a href="#review" className="hover:text-black transition">
-            Review
-          </a>
+          <button onClick={() => scrollToSection("category")} className="hover:text-gray transition cursor-pointer">Category</button>
+          <button onClick={() => scrollToSection("destination")} className="text-gray transition cursor-pointer">Destination</button>
+          <button onClick={() => scrollToSection("event")} className="hover:text-gray transition cursor-pointer">Event</button>
+          <button onClick={() => scrollToSection("preview")} className="hover:text-gray transition cursor-pointer">Preview</button>
         </nav>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col justify-between w-6 h-6 focus:outline-none"
         >
-          <span
-            className={`block h-[3px] w-6 rounded transition-transform duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
-            } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`block h-[3px] w-6 rounded transition-opacity duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
-            } ${menuOpen ? "opacity-0" : "opacity-100"}`}
-          />
-          <span
-            className={`block h-[3px] w-6 rounded transition-transform duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
-            } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-          />
+          <span className={`block h-[3px] w-6 rounded transition-transform duration-300 ${scrolled ? "bg-black" : "bg-white"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block h-[3px] w-6 rounded transition-opacity duration-300 ${scrolled ? "bg-black" : "bg-white"} ${menuOpen ? "opacity-0" : "opacity-100"}`} />
+          <span className={`block h-[3px] w-6 rounded transition-transform duration-300 ${scrolled ? "bg-black" : "bg-white"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
       {menuOpen && (
         <div className="md:hidden bg-white/10 backdrop-blur-2xl shadow-lg border-t border-white/10">
-          <nav className="flex flex-col space-y-4 px-6 py-4 text-white font-[Lora]">
-            <a href="#category" className="hover:text-[#67C090] transition">
-              Category
-            </a>
-            <a href="#destination" className="hover:text-[#67C090] transition">
-              Destination
-            </a>
-            <a href="#event" className="hover:text-[#67C090] transition">
-              Event
-            </a>
-            <a href="#review" className="hover:text-[#67C090] transition">
-              Review
-            </a>
+          <nav className="flex flex-col space-y-4 px-6 py-4 text-black font-[Lora]">
+            <button onClick={() => scrollToSection("category")} className="hover:text-gray transition">Category</button>
+            <button onClick={() => scrollToSection("destination")} className="hover:text-gray  transition">Destination</button>
+            <button onClick={() => scrollToSection("event")} className="hover:text-gray  transition">Event</button>
+            <button onClick={() => scrollToSection("preview")} className="hover:text-gray transition">Preview</button>
+            <button onClick={() => scrollToSection("top")} className="hover:text-gray transition">Home</button>
           </nav>
         </div>
       )}

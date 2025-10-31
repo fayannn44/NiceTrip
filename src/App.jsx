@@ -9,18 +9,26 @@ import Destination from "./Components/Destination/Destination";
 import Footer from "./Components/Footer/footer";
 import DestinationPage from "./Components/DestinationPage/DestinationPage";
 import Preview from "./Components/Preview/Preview";
-import Event from "./Components/Event/event";
+import Event from "./Components/Event/event"; 
 
 const HomePage = () => {
   return (
     <>
-      <Hero />
       <Header />
+      <Hero />
       <About />
-      <Category />
-      <Destination />
-      <Preview />
-      <Event />
+      <div id="category">
+        <Category />
+      </div>
+      <div id="destination">
+        <Destination />
+      </div>
+      <div id="event">
+        <Event />
+      </div>
+      <div id="preview">
+        <Preview />
+      </div>
       <Footer />
     </>
   );
@@ -28,13 +36,13 @@ const HomePage = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/NiceTrip">
       <Routes>
-        <Route path="/NiceTrip" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/category" element={<Category />} />
         <Route path="/destination" element={<DestinationPage />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/Preview" element={<Preview />} />
+        <Route path="/preview" element={<Preview />} />
       </Routes>
     </Router>
   );
