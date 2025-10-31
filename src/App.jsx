@@ -30,9 +30,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/NiceTrip" element={<HomePage />} />
+        <Route path="/NiceTrip/" element={<HomePage />} />
 
         <Route path="/NiceTrip/destination" element={<DestinationPage />} />
+        <Route path="/destination" element={<DestinationPage />} />
       </Routes>
     </Router>
   );
