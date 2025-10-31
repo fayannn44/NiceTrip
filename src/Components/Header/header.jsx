@@ -27,16 +27,16 @@ function Header() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8 font-[Lora]">
-          <a href="#category" className="hover:text-[#67C090] transition">
+          <a href="#category" className="hover:text-black transition">
             Category
           </a>
-          <a href="#destination" className="hover:text-[#67C090] transition">
+          <a href="#destination" className="hover:text-black transition">
             Destination
           </a>
-          <a href="#event" className="hover:text-[#67C090] transition">
+          <a href="#event" className="hover:text-black transition">
             Event
           </a>
-          <a href="#review" className="hover:text-[#67C090] transition">
+          <a href="#review" className="hover:text-black transition">
             Review
           </a>
         </nav>
