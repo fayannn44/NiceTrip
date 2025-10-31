@@ -1,4 +1,5 @@
 import React from "react";
+// Import BrowserRouter
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Hero from "./Components/Herosection/herosection";
@@ -28,12 +29,12 @@ const HomePage = () => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/NiceTrip/" element={<HomePage />} />
 
-        <Route path="/NiceTrip/destination" element={<DestinationPage />} />
+    <Router basename="/NiceTrip"> 
+      <Routes>
+        <Route path="/" element={<HomePage />} /> 
         <Route path="/destination" element={<DestinationPage />} />
+        
       </Routes>
     </Router>
   );
